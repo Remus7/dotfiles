@@ -45,11 +45,12 @@ set $orange       #FFA066
 set $yellow       #DCA561  
 set $green        #98BB6C  
 set $blue         #7E9CD8  
+set $blue_darker  #4F72AF
 set $teal         #6A9589  
 set $purple       #938AA9  
 set $aqua         #7AA89F  
 
-client.focused          $blue       $blue       $bg0       $blue      $blue
+client.focused          $blue_darker       $blue_darker      $white       $blue_darker      $blue_darker
 client.focused_inactive #363646     $bg0       $fg0       #363646    $bg0
 client.unfocused        $bg_dim     $bg0       $fg0      $bg_dim    $bg0
 client.urgent           $red        $bg0       $fg0       $red       $red
@@ -58,6 +59,7 @@ client.placeholder      $bg0        $bg1       $grey      $bg0       $bg1
 client.background       $bg0
 
 # ---------------------------------------------------------------------------
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
