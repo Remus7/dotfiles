@@ -10,3 +10,4 @@ vim.wo.relativenumber = true
 vim.o.undofile = true
 
 vim.cmd("set clipboard=unnamedplus")
+

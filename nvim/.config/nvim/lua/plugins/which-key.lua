@@ -48,6 +48,7 @@ return {
 			{ "<leader>u", group = "Undotree" },
 			{ "<leader>x", group = "Trouble" },
 			{ "<leader>z", group = "folds" },
+			{ "<leader>h", group = "Harpoon" },
 		})
 
 		wk.add({

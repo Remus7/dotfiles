@@ -3,6 +3,4 @@
 
 - Unable to open multiple files from Telescope
 
-- Add Harpoon
-- Add lazygit?
 - Telescope search current path
