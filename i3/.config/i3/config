@@ -29,6 +29,8 @@ exec_always feh --bg-scale ~/.config/backgrounds/blue-forest.jpg
 # Rofi: Window switching and others
 bindsym $mod+d exec rofi -show combi
 
+bindsym Mod1+Tab workspace back_and_forth
+
 # -------------------------------------- Colorscheme -------------------------------------
 
 # Kanagawa Wave - Primary Backgrounds and Foregrounds
