@@ -23,6 +23,9 @@ exec --no-startup-id picom
 # Set screen resolution
 exec xrandr --output eDP --primary --mode 1920x1200 --pos 0x0 --rotate normal
 
+# Open background image
+exec_always feh --bg-scale ~/.config/backgrounds/blue-forest.jpg
+
 # ---------------------------------------------------------------------------
 
 # Font for window titles. Will also be used by the bar unless a different font
