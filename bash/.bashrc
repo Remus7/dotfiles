@@ -117,15 +117,21 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(starship init bash)"
-source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/*.bash # Much older version of fzf, bash completions not yet supported
 
 export PATH="/home/$USER/Installations/nvim-linux64/bin:$PATH"
 export PATH="/home/$USER/Installations/zen/:$PATH"
 export PATH="/home/$USER/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
-alias ts="tmux-sessionizer"
 alias vim="nvim"
+alias bat="batcat"
+
+alias ts="tmux-sessionizer"
+alias fn='nvim $(fzf -m --preview="batcat --color=always {}")'
+alias fd='cd ./$(find . -type d -print | fzf)'
+
+alias ex='exit'
 
 export EDITOR="nvim"
 
