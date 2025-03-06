@@ -108,7 +108,6 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -120,11 +119,21 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# resize focused window
+bindsym $mod+MOD1+h resize shrink width 10 px or 10 ppt
+bindsym $mod+MOD1+j resize grow height 10 px or 10 ppt
+bindsym $mod+MOD1+k resize shrink height 10 px or 10 ppt
+bindsym $mod+MOD1+l resize grow width 10 px or 10 ppt
+
+bindsym $mod+MOD1+Left resize shrink width 10 px or 10 ppt
+bindsym $mod+MOD1+Down resize grow height 10 px or 10 ppt
+bindsym $mod+MOD1+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+MOD1+Right resize grow width 10 px or 10 ppt
 
 # split in horizontal orientation
 # bindsym $mod+h split h
@@ -224,3 +233,8 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Run xev in terminal to find out name for inputs
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 3%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 3%+
+
