@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+if [ "$#" -ne 1 ]; then
+	echo -e "ERROR: incorect syntax. \nUsage: pjcreate [name]"
+	exit
+fi
+
+NAME="$1"
+
+mkdir "$NAME"
+cd "$NAME"
+
+touch "$NAME.in" "$NAME.out" "$NAME.debug"
+
+cat >"$NAME.cpp" <<-EOM
+	#include <iostream>
+
+	using namespace std;
+
+	int main() {
+	  cout << "Hello World!" << endl;
+	  return 0;
+	}
+EOM
+
+nvim "$NAME.cpp" "$NAME.in" "$NAME.out" "$NAME.debug"

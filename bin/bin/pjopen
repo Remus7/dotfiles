@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+if [ "$#" -ge 2 ]; then
+	echo -e "ERROR: incorect syntax. \n\nUsage: \npjopen = opens in current directory\npjopen [name] = opens in [name] directory"
+	exit
+fi
+
+name="$1"
+
+if [ "$name" ]; then
+	name="${name%/}"
+	cd "$name"
+	nvim "$name.cpp" "$name.in" "$name.out" "$name.debug"
+	exit
+fi
+
+name="${PWD##*/}"
+nvim "$name.cpp" "$name.in" "$name.out" "$name.debug"

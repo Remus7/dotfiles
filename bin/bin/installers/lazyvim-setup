@@ -1,0 +1,86 @@
+#!/usr/bin/bash
+# IMPORTANT: this code has never been tested as is
+# This is designed to only run once, in a new terminal, in order to set up all of LazyVim's dependencies (according to LazyHealth)
+
+checkInput() {
+	if ! [[ $REPLY =~ ^[NnYy]$ ]]; then
+		printf "\nUnknown input!\n"
+		exit
+	fi
+}
+
+installLvim() {
+	sudo snap install nvim --classic # On Ubuntu 24, neovim version 0.9.5, so we use Snap for better performance
+	sudo apt install git
+
+	git clone https://github.com/LazyVim/starter ~/.config/nvim
+	rm -rf ~/.config/nvim/.git
+
+	# Install basic dependencies
+	sudo apt-get install gcc fish ripgrep fdclone fd-find curl golang-go composer npm cargo python3-pip tree-sitter-cli default-jdk luarocks ruby ruby-neovim
+	sudo snap install julia --classic
+	sudo npm install -g neovim
+	sudo gem install neovim
+
+	LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+	curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+	tar xf lazygit.tar.gz lazygit
+	sudo install lazygit /usr/local/bin
+
+	mv ~/lazygit ~/Installations
+	rm ~/lazygit.tar.gz
+}
+
+installPlugins() {
+	# Install personal plugins from github
+	cd ~/.config/nvim/
+	rm -rf lua
+	git clone https://github.com/Remus7/nvim.conf.git
+	mv nvim.conf lua
+}
+
+read -p "Do you have a NerdFont installed? (y/n) " -n 1 -r
+echo # move to a new line
+checkInput
+if [[ $REPLY =~ ^[Nn]$ ]]; then
+	printf "\nInstall a NerdFont, otherwise certain symbols would not be displayed properly.\n https://www.nerdfonts.com/font-downloads\n"
+	exit
+fi
+
+read -p "Are you authenticated into GitHub CLI? (y/n) " -n 1 -r
+echo # move to a new line
+checkInput
+if [[ $REPLY =~ ^[Nn]$ ]]; then
+	printf "\nAuthenticate into GitHub CLI in order to pull dotfiles and custom configurations\n"
+	exit
+fi
+
+# back up existing configuration
+read -p "Do you have an existing neovim configuration? (y/n) " -n 1 -r
+echo # move to a new line
+checkInput
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	mv ~/.config/nvim{,.bak}
+	mv ~/.local/share/nvim{,.bak}
+	mv ~/.local/state/nvim{,.bak}
+	mv ~/.cache/nvim{,.bak}
+fi
+
+sudo apt-get update
+mkdir ~/Installations/
+
+read -p "Do you want to install all dependencies? (y/n) " -n 1 -r
+echo # move to a new line
+checkInput
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	installLvim
+fi
+
+read -p "Do you want to add plugins? (y/n) " -n 1 -r
+echo
+checkInput
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	installPlugins
+fi
+
+printf "\nFinished running succesfully!\n"
