@@ -18,3 +18,4 @@ require("vim-options")
 require("lazy").setup("plugins")
 
 vim.keymap.set("n", "<leader>l", ":Lazy<cr>", {})
+
