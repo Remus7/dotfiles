@@ -1,5 +1,6 @@
 configuration{
     modi: "run,drun,window,combi";
+    font: "FiraCode 12";
     icon-theme: "Oranchelo";
     show-icons: true;
     terminal: "alacritty";
@@ -10,6 +11,7 @@ configuration{
     display-combi: " 🖥️  All ";
     display-run: " 🏃  Run ";
     display-window: " 🪟  Window";
+    display-drun: " 🐧  Drun";
     sidebar-mode: true;
 }
 
