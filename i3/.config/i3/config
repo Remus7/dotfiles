@@ -24,7 +24,7 @@ exec --no-startup-id picom
 # exec xrandr --output eDP --primary --mode 1920x1200 --pos 0x0 --rotate normal
 
 # Feh: Open background image
-exec_always feh --bg-scale ~/.config/backgrounds/green-mountain.jpg
+exec_always feh --bg-scale ~/.config/backgrounds/cat-window.png
 
 # Rofi: Window switching and others
 bindsym $mod+d exec rofi -show combi
