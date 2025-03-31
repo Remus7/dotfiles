@@ -5,3 +5,6 @@ window-decoration = none
 font-family=FiraCode Nerd Font
 font-size=12
 font-feature="-calt"
+
+# background-opacity = 0.85
+# background-blur-radius = 100
