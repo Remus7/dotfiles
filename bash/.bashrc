@@ -132,6 +132,8 @@ alias fn='nvim $(fzf -m --preview="bat --color=always {}")'
 alias fd='cd ./$(find . -type d -print | fzf)'
 
 alias ex='exit'
+alias gs='git status'
+alias gal='git add .'
 
 export EDITOR="nvim"
 export TERMINAL="ghostty"
