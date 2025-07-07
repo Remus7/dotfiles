@@ -33,6 +33,9 @@ bindsym $mod+a exec rofi -show drun
 # Redshift: Blue light filter
 exec --no-startup-id redshift -l 44.42:26.10
 
+# Run ibus for chinese keyboard
+exec --no-startup-id ibus-daemon -rxRd
+
 bindsym Mod1+Tab workspace back_and_forth
 
 bindsym $mod+n exec --no-startup-id ghostty -e ~/.config/i3/launch_nmtui.sh
@@ -245,4 +248,3 @@ bindsym $mod+r mode "resize"
 # Run xev in terminal to find out name for inputs
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 3%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 3%+
-
