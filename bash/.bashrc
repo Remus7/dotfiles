@@ -124,6 +124,7 @@ export PATH="/home/$USER/Installations/nvim-linux64/bin:$PATH"
 export PATH="/home/$USER/Installations/zen/:$PATH"
 export PATH="/home/$USER/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/home/$USER/go/bin"
 
 alias vim="nvim"
 
@@ -144,3 +145,5 @@ export NVM_DIR="$HOME/.nvm"
 
 LS_COLORS=$LS_COLORS:'ow=0;36:' ; export LS_COLORS
 
+
+. "$HOME/.local/bin/env"
