@@ -14,11 +14,11 @@ Contains the following plugins:
 8. Mason, mason-lspconfig, nvim-lspconfig (LSP servers)
 9. none-ls (Linters, Formatters)
 10. nvim-cmp, luaSnip, cmp.luaSNip, friendly-snippets, cmp-nvim-lsp (completion and snippets)
-11. nvim-ufo (folding)
+11. nvim-ufo (folding) - unused
 12. vim-tmux-navigator (navigation)
 13. better-vim-tmux-resizer (resizing)
 
-14. trouble.nvim (diagnostics centralisation)
+14. trouble.nvim (diagnostics centralisation) - unused
 15. autoclose.nvim (simpler autopairs)
 16. undotree (undo history)
 
