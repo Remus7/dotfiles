@@ -24,3 +24,4 @@ Contains the following plugins:
 
 15. sonarlint (additional LSP) 
 16. Harpoon (buffer management)
+17. obsidian.nvim - WIP (not yet configured)

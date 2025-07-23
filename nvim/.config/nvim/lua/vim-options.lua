@@ -10,3 +10,11 @@ vim.wo.relativenumber = true
 vim.o.undofile = true
 
 vim.cmd("set clipboard=unnamedplus")
+
+vim.o.conceallevel = 0
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.wo.conceallevel = 2               -- show conceal in markdown for obsidian
+  end,
+})
