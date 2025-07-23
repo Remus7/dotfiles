@@ -36,6 +36,9 @@ exec --no-startup-id redshift -l 44.42:26.10
 # Run ibus for chinese keyboard
 exec --no-startup-id ibus-daemon -rxRd
 
+# Polkit from gnome, for sudo authenticaton prompts
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+
 bindsym Mod1+Tab workspace back_and_forth
 
 bindsym $mod+n exec --no-startup-id ghostty -e ~/.config/i3/launch_nmtui.sh
@@ -163,7 +166,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Mod1+space focus mode_toggle
 
 # focus the parent container - DUPLICATE BINDING
 # bindsym $mod+a focus parent
