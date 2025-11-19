@@ -29,8 +29,8 @@ return {
 				path = "~/Documents/personal",
 			},
 			{
-				name = "pentra",
-				path = "~/Documents/pentra-notes",
+				name = "facultate",
+				path = "~/Documents/Facultate",
 			},
 		},
 
