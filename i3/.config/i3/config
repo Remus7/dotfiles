@@ -41,7 +41,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 bindsym Mod1+Tab workspace back_and_forth
 
-bindsym $mod+n exec --no-startup-id ghostty -e ~/.config/i3/launch_nmtui.sh
+bindsym $mod+n exec --no-startup-id ghostty --title=nmtui -e nmtui
 for_window [title="nmtui"] floating enable, move position center, resize set 40 ppt 55 ppt
 
 # -------------------------------------- Colorscheme -------------------------------------
